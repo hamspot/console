@@ -1,0 +1,39 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Console app",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/target/debug/ferrite-console-app",
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Console: cargo build app",
+      "sourceLanguages": [
+        "rust"
+      ]
+    },
+    {
+      "name": "Debug Console Rust tests",
+      "type": "lldb",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "-p",
+          "ferrite-console-core",
+          "--manifest-path",
+          "${workspaceFolder}/Cargo.toml"
+        ],
+        "filter": {
+          "name": "ferrite-console-core",
+          "kind": "lib"
+        }
+      },
+      "sourceLanguages": [
+        "rust"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Console: cargo build app",
+      "type": "shell",
+      "command": "${env:HOME}/bin/run-build",
+      "args": [
+        "--",
+        "cargo",
+        "build",
+        "-p",
+        "ferrite-console-app",
+        "--features",
+        "tauri/custom-protocol"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PATH": "${env:HOME}/Documents/Ferrite/.tools/node/bin:${env:HOME}/.cargo/bin:${env:HOME}/bin:${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": [
+        "$rustc"
+      ],
+      "group": "build"
+    },
+    {
+      "label": "Console: npm run build",
+      "type": "shell",
+      "command": "${env:HOME}/bin/run-build",
+      "args": [
+        "--",
+        "npm",
+        "run",
+        "build"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PATH": "${env:HOME}/Documents/Ferrite/.tools/node/bin:${env:HOME}/.cargo/bin:${env:HOME}/bin:${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": [
+        "$rustc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Console: Rust tests",
+      "type": "shell",
+      "command": "${env:HOME}/bin/run-build",
+      "args": [
+        "--",
+        "cargo",
+        "test",
+        "-p",
+        "ferrite-console-core"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PATH": "${env:HOME}/Documents/Ferrite/.tools/node/bin:${env:HOME}/.cargo/bin:${env:HOME}/bin:${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": [
+        "$rustc"
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Console: Node unit tests",
+      "type": "shell",
+      "command": "${env:HOME}/bin/run-build",
+      "args": [
+        "--",
+        "node",
+        "--test",
+        "tests/unit/"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PATH": "${env:HOME}/Documents/Ferrite/.tools/node/bin:${env:HOME}/.cargo/bin:${env:HOME}/bin:${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": [],
+      "group": "test"
+    },
+    {
+      "label": "Console: tauri dev",
+      "type": "shell",
+      "command": "${env:HOME}/bin/run-build",
+      "args": [
+        "--",
+        "npm",
+        "run",
+        "tauri",
+        "--",
+        "dev"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PATH": "${env:HOME}/Documents/Ferrite/.tools/node/bin:${env:HOME}/.cargo/bin:${env:HOME}/bin:${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": [
+        "$rustc"
+      ],
+      "group": "build"
+    },
+    {
+      "label": "Console: tauri build",
+      "type": "shell",
+      "command": "${env:HOME}/bin/run-build",
+      "args": [
+        "--",
+        "npm",
+        "run",
+        "tauri",
+        "--",
+        "build"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PATH": "${env:HOME}/Documents/Ferrite/.tools/node/bin:${env:HOME}/.cargo/bin:${env:HOME}/bin:${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": [
+        "$rustc"
+      ],
+      "group": "build"
+    }
+  ]
+}
